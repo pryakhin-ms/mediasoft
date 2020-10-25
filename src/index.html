@@ -5,24 +5,123 @@
     <meta name="description" content="Лучшие смартфоны из КНР по приемлемым ценам.">
     <link rel="icon" href="img/favicon.png">
     <title>Магазин "На коленке"</title>
+    <style>
+        .container {
+            width: 100%;
+            height: auto;
+            margin: 0;
+        }
+        .left-bar {
+            width: 20%;
+            height: 100%;
+            float: left;
+            background-color: antiquewhite;
+        }
+        .form {
+            border: 1px solid #AAFFAA;
+            display:inline-block;
+            /*float: left;*/
+            /*clear: both;*/
+            width: 25%;
+            background-color: antiquewhite;
+        }
+        .feed {
+            float: right;
+            width: 80%;
+            height: auto;
+            background-color: antiquewhite;
+        }
+        .header {
+            width: 100%;
+            background-color: antiquewhite;
+        }
+        .left-item {
+            margin-top: 10px;
+            margin-left: 60px;
+            margin-bottom: 10px;
+            float: left;
+            border: 1px solid #ffaaaa;
+            width: 40%;
+            height: 500px
+        }
+        .right-item {
+            margin-top: 10px;
+            margin-right: 60px;
+            margin-bottom: 10px;
+            float: right;
+            width: 40%;
+            height: 500px;
+            border: 1px solid #ffaaaa
+        }
+        .line {
+            width: 100%;
+            background-color: antiquewhite;
+            clear: both;
+            margin: 50px;
+        }
+    </style>
 </head>
 
 <body>
-    <h1 align="center">Интернет магазин "На коленке"</h1>
-    
-    <form action="/search" align="right">
-        <input type="text">
-            <!--Перевод каретки-->
-        <br>
-        <label>
-            <input type="checkbox" value="free delivery">
-            Бесплатная доставка
-        </label>
-        <br>
-        <button>Поиск</button>
-    </form>
-    
-    <div></div>
-    <div></div>
-    <div></div>
+    <div class="container">
+        <div class="header">
+            <h1 align="center">Интернет магазин "На коленке"</h1>
+        </div>
+        <div class="left-bar">
+            <form action="/search" align="right">
+                <input type="text">
+                <br>
+                <label>
+                    <input type="checkbox" value="free delivery">
+                    Бесплатная доставка
+                </label>
+                <br>
+                <button>Поиск</button>
+            </form>
+        </div>
+        <div class="feed">
+            <div>
+                <div class="left-item"> left item</div>
+                <div class="right-item"></div>
+            </div>
+            <div>
+                <div class="left-item"></div>
+                <div class="right-item"></div>
+            </div>
+            <div>
+                <div class="left-item"></div>
+                <div class="right-item"></div>
+            </div>
+            <div>
+                <div class="left-item"></div>
+                <div class="right-item"></div>
+            </div>
+        </div>
+    </div>
 </body>
+
+    <!--<header class="header">
+        <h1 align="center">Интернет магазин "На коленке"</h1>
+    </header>
+    <div class="form">
+            <form action="/search" align="right">
+            <input type="text">
+            <br>
+            <label>
+                <input type="checkbox" value="free delivery">
+                Бесплатная доставка
+            </label>
+            <br>
+            <button>Поиск</button>
+        </form>
+    </div>
+    <div class="feed">
+        <div class="line">
+            <div class="left-item">OLOLO</div>
+            <div class="right-item">ALALAL</div>
+        </div>
+        <div class="line">
+            <div class="left-item">OLOLO</div>
+            <div class="right-item">ALALAL</div>
+        </div>
+    </div>-->
