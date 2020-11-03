@@ -5,3 +5,4 @@ const data = [
     {id: 4, brand: 'MEIZU', model: 'X8', price: 170, description: ''},
     {id: 5, brand: 'SAMSUNG', model: 'GALAXY A01', price: 10000, description: ''}
 ];
+export { data }

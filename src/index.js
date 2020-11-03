@@ -1,11 +1,20 @@
+import { data } from './scripts/data.js'
+import { Cart } from './scripts/cart.js'
+
+const cart = new Cart;
+
 window.onload = function () {
-  const data = [
-    {id: 1, brand: 'HUAWEI', model: 'P smart Z', price: 162, description: ''},
-    {id: 2, brand: 'HONOR', model: '9X', price: 171, description: ''},
-    {id: 3, brand: 'XIAOMI', model: 'Redmi Note 8 Pro ', price: 198, description: ''},
-    {id: 4, brand: 'MEIZU', model: 'X8', price: 170, description: ''},
-    {id: 5, brand: 'SAMSUNG', model: 'GALAXY A01', price: 140, description: ''}
-  ];
+  // Инициализируем начальное состояние корзины
+  //const cart = new Cart();
+  const cartRow = document.getElementById('row');
+  //const cartCount = cart.count();
+  //const currentSum = cart.sum();
+
+  // Создаём блок с состоянием корзины
+  const cartCondition = document.createElement('div');
+  cartCondition.setAttribute('id', 'cartCondition');
+  cartCondition.append(`В Вашей корзине ${cart.count()} позиций на сумму ${cart.sum()} usd`);
+  cartRow.append(cartCondition);
 
   const container = document.getElementById('container');
 
@@ -16,13 +25,26 @@ window.onload = function () {
     const image = document.createElement('img');
     image.setAttribute("height", "100");
     image.setAttribute("width", "100");
-    image.setAttribute("src", `img/${id}.jpg`);
+    image.setAttribute("src", `src/img/${id}.jpg`);
 
     const itemPrice = document.createElement('h3');
     itemPrice.append(`Цена: ${price} usd`);
-
+    // Инициализация кнопки "В корзину"
     const buttonBuy = document.createElement('button');
     buttonBuy.append("В корзину");
+    buttonBuy.addEventListener('click', () => {
+      cart.add({ id, brand, model, price });
+      // Обновляем блок с состоянием корзины
+      const cartCondition = document.getElementById('cartCondition');
+      const newCartCondition = cartCondition.cloneNode(false);
+      newCartCondition.append(`В Вашей корзине ${cart.count()} товаров на сумму ${cart.sum()} usd`);
+      cartCondition.replaceWith(newCartCondition);
+      /*const newCartCondition = document.createElement('div');
+      newCartCondition.setAttribute('id', 'cartCondition');
+      newCartCondition.append(`В Вашей корзине ${cart.count()} позиций на сумму ${cart.sum()} usd`);
+      cartCondition.replaceWith(newCartCondition);
+      alert(`${cart.sum()}`);*/
+    });
 
     const item = document.createElement('div');
     

@@ -10,19 +10,22 @@
     <title>Магазин "На коленке"</title>
  
  <style>
+     #cartCondition {
+        margin-top: 20px;
+     }
   .footer {
-   width: 100%;
-   height: 10px;
-   background-color: #2F4F4F;
-   position: absolute;
-   top: 1000px;
+        width: 100%;
+        height: 10px;
+        background-color: #2F4F4F;
+        position: absolute;
+        top: 1000px;
   }
-  .top-header {
-   width: 100%;
-   height: 30px;
-   background-color: #FFFAFA;
+  #top-header {
+        width: 100%;
+        height: 30px;
+        background-color: #FFFAFA;
   }
-  .row {
+  #row {
    background-color: #2F4F4F;
    width: 100%;
    height: 60px;
@@ -53,14 +56,15 @@
 
 
 <body>
-    <script src="index.js"></script>
+    <script src='dist/bundle.js'></script>
     <header>
-    <div class="top-header"></div>
-    <div class="row"></div>
+    <div id="top-header">
+    </div>
+    <div id="row">
+    </div>
     </header>
     <main>
     <div id="container">
-
     </div>
     </main>
     

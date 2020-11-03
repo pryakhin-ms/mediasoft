@@ -20,3 +20,5 @@ function Cart () {
         }, 0);
     };
 }
+
+export { Cart }
