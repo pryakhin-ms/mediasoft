@@ -11,7 +11,7 @@
  
  <style>
      #cartCondition {
-        margin-top: 20px;
+        padding: 5px;
      }
   .footer {
         width: 100%;
@@ -33,14 +33,17 @@
    left: 256px;
    top: 0px;*/
   }
+  #sort-row {
+      padding: 5px;
+  }
   #container {
-   background-color: #DCDCDC; /*#00AAFF*/
-   width: 75%;
-   height: 968px;
-   /*margin: 0px 50%;*/
-   position: absolute;
-   left: 256px;
-   /*top: 68px;*/
+      background-color: #DCDCDC; /*#00AAFF*/
+      width: 75%;
+      height: 968px;
+      /*margin: 0px 50%;*/
+      position: absolute;
+      left: 256px;
+      /*top: 68px;*/
   }
   .item {
    background-color:#C0C0C0;
@@ -65,9 +68,13 @@
     </header>
     <main>
     <div id="container">
+          <div id="sort-row">
+                <div style = "display:inline-block">Сортировать:</div>
+                <div style = "display:inline-block"><a href="#" id="sort-up">по цене&#8593</a></div>
+                <div style = "display:inline-block"><a href="#" id="sort-down">по цене&#8595</a></div>
+          </div>
     </div>
     </main>
-    
     <footer>
     <div class="footer"></div>
     </footer>
