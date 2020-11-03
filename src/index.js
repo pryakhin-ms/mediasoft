@@ -14,7 +14,18 @@ window.onload = function () {
   const cartCondition = document.createElement('div');
   cartCondition.setAttribute('id', 'cartCondition');
   cartCondition.append(`В Вашей корзине ${cart.count()} позиций на сумму ${cart.sum()} usd`);
-  cartRow.append(cartCondition);
+
+  // Создаём кнопку "Очистить корзину"
+  const refreshCartButton = document.createElement('button');
+  refreshCartButton.append("Очистить корзину");
+  refreshCartButton.addEventListener('click', () => cart.deleteAll());
+  refreshCartButton.addEventListener('click', () => {
+    const cartCondition = document.getElementById('cartCondition');
+    const newCartCondition = cartCondition.cloneNode(false);
+    newCartCondition.append(`В Вашей корзине ${cart.count()} товаров на сумму ${cart.sum()} usd`);
+    cartCondition.replaceWith(newCartCondition);
+  });
+  cartRow.append(cartCondition, refreshCartButton);
 
   const container = document.getElementById('container');
 

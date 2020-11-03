@@ -13,7 +13,10 @@ function Cart () {
     };
     this.delete = function (item) {
         return _.remove(this.items, (currentItem) => currentItem.id === item.id)
-    }
+    };
+    this.deleteAll = function () {
+        this.items.length = 0;
+    };
     this.sum = function () {
         return this.items.reduce((acc, item) => {
             return item.price + acc;
