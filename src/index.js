@@ -66,5 +66,11 @@ window.onload = function () {
   };
 
   // Наполнение контейнера товарами при загрузке
-  fill(data, cart);
+
+  const container = document.getElementById('container');
+
+  let promise = new Promise(function(resolve, reject) {
+    setTimeout(() => resolve(data), 3000);
+  });
+  promise.then((data) => fill(data, cart));
 };
