@@ -68,9 +68,15 @@ window.onload = function () {
   // Наполнение контейнера товарами при загрузке
 
   const container = document.getElementById('container');
+  const waitMessage = document.createElement('div');
+  waitMessage.append('Wait please...');
+  container.append(waitMessage);
 
-  let promise = new Promise(function(resolve, reject) {
+  const promise = new Promise(function(resolve) {
     setTimeout(() => resolve(data), 3000);
   });
-  promise.then((data) => fill(data, cart));
+  promise.then((data) => {
+    waitMessage.remove();
+    fill(data, cart);
+  });
 };
